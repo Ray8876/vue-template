@@ -1,0 +1,5 @@
+@import "./icon/iconfont.css";
+
+[class*=" el-icon-zt"], [class^=el-icon-zt] {
+  font-family: zt-iconfont !important;
+}

@@ -1,0 +1,72 @@
+{
+  "id": "1629650",
+  "name": "sj_bops",
+  "font_family": "zt-iconfont",
+  "css_prefix_text": "el-icon-zt",
+  "description": "私界后台",
+  "glyphs": [
+    {
+      "icon_id": "13192680",
+      "name": "lock",
+      "font_class": "-lock",
+      "unicode": "e753",
+      "unicode_decimal": 59219
+    },
+    {
+      "icon_id": "13192535",
+      "name": "calendar",
+      "font_class": "-calendar",
+      "unicode": "e752",
+      "unicode_decimal": 59218
+    },
+    {
+      "icon_id": "13191734",
+      "name": "goods",
+      "font_class": "-goods",
+      "unicode": "e750",
+      "unicode_decimal": 59216
+    },
+    {
+      "icon_id": "13191762",
+      "name": "notice",
+      "font_class": "-notice",
+      "unicode": "e751",
+      "unicode_decimal": 59217
+    },
+    {
+      "icon_id": "13191335",
+      "name": "people",
+      "font_class": "-people",
+      "unicode": "e74f",
+      "unicode_decimal": 59215
+    },
+    {
+      "icon_id": "13021895",
+      "name": "mall",
+      "font_class": "-mall",
+      "unicode": "e74e",
+      "unicode_decimal": 59214
+    },
+    {
+      "icon_id": "12975713",
+      "name": "coupons",
+      "font_class": "-coupons",
+      "unicode": "e74c",
+      "unicode_decimal": 59212
+    },
+    {
+      "icon_id": "12962757",
+      "name": "home",
+      "font_class": "-home",
+      "unicode": "e646",
+      "unicode_decimal": 58950
+    },
+    {
+      "icon_id": "12975712",
+      "name": "activity",
+      "font_class": "-activity",
+      "unicode": "e74b",
+      "unicode_decimal": 59211
+    }
+  ]
+}
