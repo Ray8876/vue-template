@@ -72,8 +72,8 @@
                 >
                     <el-row :gutter="4">
                         <el-col :span="12">
-                            <el-form-item label="进货商" prop="customerId">
-                                <el-select v-model="form.customerId" placeholder="选择进货商" @focus="getCustomerList">
+                            <el-form-item label="客户" prop="customerId">
+                                <el-select v-model="form.customerId" placeholder="选择客户" @focus="getCustomerList">
                                     <div v-for="(item,index) in customerList" :key="index">
                                         <el-option :label=item.customerName :value=item.id ></el-option>
                                     </div>

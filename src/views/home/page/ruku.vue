@@ -23,7 +23,7 @@
             >
                 <!--        选择框项-->
                 <el-table-column prop="id" label="ID" align="center" ></el-table-column>
-                <el-table-column prop="customerName" label="客户名" align="center" ></el-table-column>
+                <el-table-column prop="customerName" label="进货商" align="center" ></el-table-column>
                 <el-table-column prop="clothName" label="布名" align="center" ></el-table-column>
                 <el-table-column prop="length" label="购买长度" align="center" ></el-table-column>
                 <el-table-column prop="totalPrice" label="总价" align="center" ></el-table-column>
@@ -94,7 +94,7 @@
                     </el-row>
                     <el-row :gutter="4">
                         <el-col :span="12">
-                            <el-form-item label="购买长度" prop="customerAddress">
+                            <el-form-item label="购买长度" prop="length">
                                 <el-input v-model="form.length" style="width: 300px"></el-input>
                             </el-form-item>
                         </el-col>
@@ -116,7 +116,7 @@
 <script>
 
   import {
-    buList,
+    buList, caigouList,
     ChuRuKuDelete,
     ChuRuKuDetail,
     ChuRuKuSaveAndUpdate,
@@ -197,7 +197,7 @@
       },
 
       async getCustomerList() {
-        await kehuList({size: 999})
+        await caigouList({size: 999})
           .then(res => {
             // this.$message.success('获取成功');
             this.customerList = res.data['list'];
