@@ -58,6 +58,35 @@ export function kehuDelete(params) {
   );
 }
 
+//采购列表
+export function caigouList(params) {
+  return request.post(
+    '/supplier/list',
+    params
+  );
+}
+
+export function caigouSaveAndUpdate(params) {
+  return request.post(
+    '/supplier/edit',
+    params
+  );
+}
+
+export function caigouDetail(params) {
+  return request.post(
+    '/supplier/detail',
+    params
+  );
+}
+
+export function caigouDelete(params) {
+  return request.post(
+    '/supplier/delete',
+    params
+  );
+}
+
 
 // 出入库表
 export function ChuKuList(params) {

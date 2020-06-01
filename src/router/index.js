@@ -26,6 +26,7 @@ const Dashboard = () => import('../views/home/comps/Dashboard.vue');
 // const OrderPay = () => import('../views/home/comps/orders/OrderPay');
 const BuList = () => import('../views/home/page/buList.vue');
 const KehuList = () => import('../views/home/page/kehuList.vue');
+const CaigouList = () => import('../views/home/page/caigouList.vue');
 const chuku = () => import('../views/home/page/chuku.vue');
 const ruku = () => import('../views/home/page/ruku.vue');
 
@@ -60,7 +61,12 @@ const routes = [
       {
         path: '/kehuList',
         component: KehuList,
-        meta: { title: '客户/采购方列表' }
+        meta: { title: '客户列表' }
+      },
+      {
+        path: '/caigouList',
+        component: CaigouList,
+        meta: { title: '采购方列表' }
       },
       {
         path: '/chuku',

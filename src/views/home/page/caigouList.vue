@@ -4,9 +4,9 @@
         <div class="crumbs">
             <el-breadcrumb separator="/">
                 <el-breadcrumb-item>
-                    <i class="el-icon-zt-calendar"></i> 客户列表
+                    <i class="el-icon-zt-calendar"></i> 采购方列表
                 </el-breadcrumb-item>
-                <el-breadcrumb-item>客户管理</el-breadcrumb-item>
+                <el-breadcrumb-item>采购方管理</el-breadcrumb-item>
             </el-breadcrumb>
         </div>
         <!--      功能搜索栏-->
@@ -23,11 +23,11 @@
             >
                 <!--        选择框项-->
                 <el-table-column prop="id" label="ID" align="center" ></el-table-column>
-                <el-table-column prop="customerName" label="客户名" align="center" ></el-table-column>
-                <el-table-column prop="customerMoblie" label="手机" align="center" ></el-table-column>
+                <el-table-column prop="supplierName" label="采购方名" align="center" ></el-table-column>
+                <el-table-column prop="supplierMoblie" label="手机" align="center" ></el-table-column>
 
-                <el-table-column prop="customerAddress" label="地址" align="center"></el-table-column>
-                <el-table-column prop="customerMessage" label="备注" align="center" ></el-table-column>
+                <el-table-column prop="supplierAddress" label="地址" align="center"></el-table-column>
+                <el-table-column prop="supplierMessage" label="备注" align="center" ></el-table-column>
 
 <!--                <el-table-column prop="createTime" label="创建时间" width="200" align="center"></el-table-column>-->
                 <el-table-column label="操作" width="100" align="center" fixed="right">
@@ -72,29 +72,29 @@
                 >
                     <el-row :gutter="4">
                         <el-col :span="12">
-                            <el-form-item label="客户名" prop="customerName">
-                                <el-input v-model="form.customerName" style="width: 300px"></el-input>
+                            <el-form-item label="客户名" prop="supplierName">
+                                <el-input v-model="form.supplierName" style="width: 300px"></el-input>
                             </el-form-item>
                         </el-col>
                     </el-row>
                     <el-row :gutter="4">
                         <el-col :span="12">
-                            <el-form-item label="手机" prop="customerMoblie">
-                                <el-input v-model="form.customerMoblie" style="width: 300px"></el-input>
+                            <el-form-item label="手机" prop="supplierMoblie">
+                                <el-input v-model="form.supplierMoblie" style="width: 300px"></el-input>
                             </el-form-item>
                         </el-col>
                     </el-row>
                     <el-row :gutter="4">
                         <el-col :span="12">
-                            <el-form-item label="地址" prop="customerAddress">
-                                <el-input v-model="form.customerAddress" style="width: 300px"></el-input>
+                            <el-form-item label="地址" prop="supplierAddress">
+                                <el-input v-model="form.supplierAddress" style="width: 300px"></el-input>
                             </el-form-item>
                         </el-col>
                     </el-row>
                     <el-row :gutter="4">
                         <el-col :span="12">
-                            <el-form-item label="备注" prop="customerMessage">
-                                <el-input v-model="form.customerMessage" style="width: 300px"></el-input>
+                            <el-form-item label="备注" prop="supplierMessage">
+                                <el-input v-model="form.supplierMessage" style="width: 300px"></el-input>
                             </el-form-item>
                         </el-col>
                     </el-row>
@@ -114,7 +114,7 @@
 
 <script>
 
-  import { kehuDelete, kehuDetail, kehuList, kehuSaveAndUpdate } from '../../../network/request';
+  import { caigouDelete, caigouDetail, caigouList, caigouSaveAndUpdate } from '../../../network/request';
 
   export default {
     data() {
@@ -147,10 +147,10 @@
         //添加修改的对象数据
         form: {
           id: '',
-          customerName: '',
-          customerMoblie: '',
-          customerAddress: '',
-          customerMessage: '',
+          supplierName: '',
+          supplierMoblie: '',
+          supplierAddress: '',
+          supplierMessage: '',
 
         },
 
@@ -175,7 +175,7 @@
         this.$refs[formName].validate(valid => {
           if (valid) {
             console.log(this.form);
-            kehuSaveAndUpdate(this.form)
+            caigouSaveAndUpdate(this.form)
               .then(res => {
                 if (res.code === 0) {
                   console.log(res);
@@ -199,7 +199,7 @@
       },
 
       async handleDelete(row){
-        await kehuDelete({ id: row.id })
+        await caigouDelete({ id: row.id })
           .then(res => {
             this.$message.success('删除成功');
           })
@@ -218,7 +218,7 @@
         await this.$nextTick(() => {
           this.$loading();
         });
-        await kehuDetail({ id: row.id })
+        await caigouDetail({ id: row.id })
           .then(res => {
             // console.log(res.data)
             this.editId = res.data.id;
@@ -254,7 +254,7 @@
       },
       // 获取课程数据
       getData() {
-        kehuList({
+        caigouList({
           size: this.query.pageSize,
           current: this.query.pageIndex,
         })

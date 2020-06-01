@@ -64,12 +64,16 @@ export default {
         },
         {
           icon: 'el-icon-magic-stick',
-          index: 'kehu',
+          index: 'kehuOrcaigou',
           title: '客户/采购方管理',
           subs: [
             {
               index: 'kehuList',
-              title: '客户/采购方列表'
+              title: '客户列表'
+            },
+            {
+              index: 'caigouList',
+              title: '采购方列表'
             }
           ]
         },
